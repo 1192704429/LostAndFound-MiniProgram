@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lose.server.dao.LoseGoodsDao">
+
+    <select id="findList" parameterType="com.lose.server.dto.LoseGoodsDTO"
+            resultType="com.lose.server.dto.LoseGoodsDTO">
+        select
+        loseGoods.*,
+        students.header_img,
+        students.name,
+        students.tel,
+        loseType.type_name
+        from lose_goods loseGoods
+        left join students students on loseGoods.user_id = students.id
+        left join lose_type loseType on loseGoods.type_id = loseType.id
+        <where>
+            <if test="id != null and id != ''">and loseGoods.id = #{id}</if>
+            <if test="goodsName != null and goodsName != ''">and loseGoods.goods_name like
+                concat('%',#{goodsName},'%')
+            </if>
+            <if test="goodsImg != null and goodsImg != ''">and loseGoods.goods_img = #{goodsImg}</if>
+            <if test="goodsInfo != null and goodsInfo != ''">and loseGoods.goods_info = #{goodsInfo}</if>
+            <if test="typeId != null and typeId != ''">and loseGoods.type_id = #{typeId}</if>
+            <if test="type != null">and loseGoods.type = #{type}</if>
+            <if test="userId != null and userId != ''">and loseGoods.user_id = #{userId}</if>
+            <if test="createTime != null and createTime != ''">and loseGoods.create_time = #{createTime}</if>
+            <if test="location != null and location != ''">and loseGoods.location = #{location}</if>
+            <if test="hasMoney != null">and loseGoods.has_money = #{hasMoney}</if>
+            <if test="money != null and money != ''">and loseGoods.money = #{money}</if>
+            <if test="imgList != null and imgList != ''">and loseGoods.img_list = #{imgList}</if>
+            <if test="hidden != null and hidden != ''">and loseGoods.hidden = #{hidden}</if>
+            <if test="headerImg != null and headerImg != ''">and students.header_img = #{headerImg}</if>
+            <if test="name != null and name != ''">and students.name like concat('%',#{name},'%')</if>
+            <if test="tel != null and tel != ''">and students.tel = #{tel}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.lose.server.dto.LoseGoodsDTO" resultType="java.lang.Integer">
+        select count(*) from lose_goods loseGoods
+        left join students students on loseGoods.user_id = students.id
+        left join lose_type loseType on loseGoods.type_id = loseType.id
+        <where>
+            <if test="id != null and id != ''">and loseGoods.id = #{id}</if>
+            <if test="goodsName != null and goodsName != ''">and loseGoods.goods_name like
+                concat('%',#{goodsName},'%')
+            </if>
+            <if test="goodsImg != null and goodsImg != ''">and loseGoods.goods_img = #{goodsImg}</if>
+            <if test="goodsInfo != null and goodsInfo != ''">and loseGoods.goods_info = #{goodsInfo}</if>
+            <if test="typeId != null and typeId != ''">and loseGoods.type_id = #{typeId}</if>
+            <if test="type != null">and loseGoods.type = #{type}</if>
+            <if test="userId != null and userId != ''">and loseGoods.user_id = #{userId}</if>
+            <if test="createTime != null and createTime != ''">and loseGoods.create_time = #{createTime}</if>
+            <if test="location != null and location != ''">and loseGoods.location = #{location}</if>
+            <if test="hasMoney != null">and loseGoods.has_money = #{hasMoney}</if>
+            <if test="money != null and money != ''">and loseGoods.money = #{money}</if>
+            <if test="imgList != null and imgList != ''">and loseGoods.img_list = #{imgList}</if>
+            <if test="hidden != null and hidden != ''">and loseGoods.hidden = #{hidden}</if>
+            <if test="headerImg != null and headerImg != ''">and students.header_img = #{headerImg}</if>
+            <if test="name != null and name != ''">and students.name like concat('%',#{name},'%')</if>
+            <if test="tel != null and tel != ''">and students.tel = #{tel}</if>
+        </where>
+    </select>
+
+</mapper>

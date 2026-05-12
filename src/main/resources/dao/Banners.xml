@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lose.server.dao.BannersDao">
+
+    <select id="findList" parameterType="com.lose.server.dto.BannersDTO" resultType="com.lose.server.dto.BannersDTO">
+        select
+        banners.*
+        from banners banners
+        <where>
+            <if test="id != null and id != ''">and banners.id = #{id}</if>
+            <if test="bannerUrl != null and bannerUrl != ''">and banners.banner_url = #{bannerUrl}</if>
+            <if test="createTime != null and createTime != ''">and banners.create_time = #{createTime}</if>
+            <if test="bannerName != null and bannerName != ''">and banners.banner_name like concat('%',#{bannerName},'%')</if>
+            <if test="content != null and content != ''">and banners.content = #{content}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.lose.server.dto.BannersDTO" resultType="java.lang.Integer">
+        select count(*) from banners banners
+        <where>
+            <if test="id != null and id != ''">and banners.id = #{id}</if>
+            <if test="bannerUrl != null and bannerUrl != ''">and banners.banner_url = #{bannerUrl}</if>
+            <if test="createTime != null and createTime != ''">and banners.create_time = #{createTime}</if>
+            <if test="bannerName != null and bannerName != ''">and banners.banner_name like concat('%',#{bannerName},'%')</if>
+            <if test="content != null and content != ''">and banners.content = #{content}</if>
+        </where>
+    </select>
+
+</mapper>

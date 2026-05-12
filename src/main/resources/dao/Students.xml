@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lose.server.dao.StudentsDao">
+
+    <select id="findList" parameterType="com.lose.server.dto.StudentsDTO" resultType="com.lose.server.dto.StudentsDTO">
+        select
+        students.*
+        from students students
+        <where>
+            <if test="id != null and id != ''">and students.id = #{id}</if>
+            <if test="username != null and username != ''">and students.username = #{username}</if>
+            <if test="password != null and password != ''">and students.password = #{password}</if>
+            <if test="headerImg != null and headerImg != ''">and students.header_img = #{headerImg}</if>
+            <if test="name != null and name != ''">and students.name like concat('%',#{name},'%')</if>
+            <if test="tel != null and tel != ''">and students.tel = #{tel}</if>
+            <if test="localtion != null and localtion != ''">and students.localtion = #{localtion}</if>
+            <if test="info != null and info != ''">and students.info = #{info}</if>
+            <if test="createTime != null and createTime != ''">and students.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.lose.server.dto.StudentsDTO" resultType="java.lang.Integer">
+        select count(*) from students students
+        <where>
+            <if test="id != null and id != ''">and students.id = #{id}</if>
+            <if test="username != null and username != ''">and students.username = #{username}</if>
+            <if test="password != null and password != ''">and students.password = #{password}</if>
+            <if test="headerImg != null and headerImg != ''">and students.header_img = #{headerImg}</if>
+            <if test="name != null and name != ''">and students.name like concat('%',#{name},'%')</if>
+            <if test="tel != null and tel != ''">and students.tel = #{tel}</if>
+            <if test="localtion != null and localtion != ''">and students.localtion = #{localtion}</if>
+            <if test="info != null and info != ''">and students.info = #{info}</if>
+            <if test="createTime != null and createTime != ''">and students.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

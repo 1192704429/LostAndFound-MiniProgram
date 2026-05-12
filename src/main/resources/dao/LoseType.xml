@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lose.server.dao.LoseTypeDao">
+
+    <select id="findList" parameterType="com.lose.server.dto.LoseTypeDTO" resultType="com.lose.server.dto.LoseTypeDTO">
+        select
+        loseType.*
+        from lose_type loseType
+        <where>
+            <if test="id != null and id != ''">and loseType.id = #{id}</if>
+            <if test="typeName != null and typeName != ''">and loseType.type_name like concat('%',#{typeName},'%')</if>
+            <if test="createTime != null and createTime != ''">and loseType.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.lose.server.dto.LoseTypeDTO" resultType="java.lang.Integer">
+        select count(*) from lose_type loseType
+        <where>
+            <if test="id != null and id != ''">and loseType.id = #{id}</if>
+            <if test="typeName != null and typeName != ''">and loseType.type_name like concat('%',#{typeName},'%')</if>
+            <if test="createTime != null and createTime != ''">and loseType.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>
