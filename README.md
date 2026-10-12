@@ -18,7 +18,7 @@
 | 后台管理员 | 管理员端 |
 
 
-![功能模块图](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/azhou_promotion/img/module_structure/func_module_ad25e4b64f9f40f7b92dbdb02374aea3.png)
+![功能模块图](docs/images/01-func-module.png)
 
 
 ## 三、技术栈说明
@@ -51,35 +51,35 @@
 
 登录页：填写账号密码，登录失物招领小程序
 
-![登录页：填写账号密码，登录失物招领小程序](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/5da33ba5-8bdf-4a76-8bc4-93bdcf3cb2aa.png)
+![登录页：填写账号密码，登录失物招领小程序](docs/images/02-deng-lu.png)
 
 首页：失物招领小程序首页，展示带悬赏的失物信息
 
-![首页：失物招领小程序首页，展示带悬赏的失物信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/a414a66f-464e-4ad5-8a4e-ecf5f77ef48d.png)
+![首页：失物招领小程序首页，展示带悬赏的失物信息](docs/images/03-shou-ye.png)
 
 失物列表页：展示分类后的失物信息，支持搜索查询
 
-![失物列表页：展示分类后的失物信息，支持搜索查询](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/f15abf74-93b9-4d69-826d-2b3627b7d685.png)
+![失物列表页：展示分类后的失物信息，支持搜索查询](docs/images/04-shi-wu-lie-biao.png)
 
 详情页：展示丢失物品的详细信息与联系方式
 
-![详情页：展示丢失物品的详细信息与联系方式](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/328e7ce3-90a2-4e46-8b95-def6fae2e5b6.png)
+![详情页：展示丢失物品的详细信息与联系方式](docs/images/05-xiang-qing.png)
 
 寻物信息发布页：填写丢失物品信息，发布寻物启事
 
-![寻物信息发布页：填写丢失物品信息，发布寻物启事](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/ea309a31-c69d-4715-80fd-475a08aaa7a8.png)
+![寻物信息发布页：填写丢失物品信息，发布寻物启事](docs/images/06-xun-wu-xin-xi-fa-bu.png)
 
 已发布信息管理页：管理本人发布的失物信息，支持编辑删除
 
-![已发布信息管理页：管理本人发布的失物信息，支持编辑删除](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/02627194-7632-450f-8956-cefd9f5d06c0.png)
+![已发布信息管理页：管理本人发布的失物信息，支持编辑删除](docs/images/07-yi-fa-bu-xin-xi-guan-li.png)
 
 公告详情页：展示与向日葵花语相关的公告详情
 
-![公告详情页：展示与向日葵花语相关的公告详情](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/dc6c0e24-455b-4334-890d-e069bdcde62c.png)
+![公告详情页：展示与向日葵花语相关的公告详情](docs/images/08-gong-gao-xiang-qing.png)
 
 个人信息编辑页：编辑修改个人信息，完成后提交保存
 
-![个人信息编辑页：编辑修改个人信息，完成后提交保存](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/7f9c9e68-cfb6-4d73-8ff6-05911bdea669.png)
+![个人信息编辑页：编辑修改个人信息，完成后提交保存](docs/images/09-ge-ren-xin-xi-bian-ji.png)
 
 
 ###### 管理员端
@@ -100,23 +100,23 @@
 
 登录页：管理员输入账号密码登录失物招领后台
 
-![登录页：管理员输入账号密码登录失物招领后台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/491e40ba-523e-452f-8ef3-282e8856440a.png)
+![登录页：管理员输入账号密码登录失物招领后台](docs/images/10-deng-lu.png)
 
 轮播图管理：管理首页轮播图，支持增删改查询操作
 
-![轮播图管理：管理首页轮播图，支持增删改查询操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/ab1211bc-2c14-456c-8843-31533ea29eae.png)
+![轮播图管理：管理首页轮播图，支持增删改查询操作](docs/images/11-lun-bo-tu-guan-li.png)
 
 学生用户管理页：查看并管理系统内所有注册的学生用户
 
-![学生用户管理页：查看并管理系统内所有注册的学生用户](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/5c0acb3f-54a5-4c13-8261-cc32dcb0fe2b.png)
+![学生用户管理页：查看并管理系统内所有注册的学生用户](docs/images/12-xue-sheng-yong-hu-guan-li.png)
 
 物品记录管理页：管理员查看并管理所有已发布的物品信息
 
-![物品记录管理页：管理员查看并管理所有已发布的物品信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/b22fe90f-5db5-47b9-8531-669f7db462ec.png)
+![物品记录管理页：管理员查看并管理所有已发布的物品信息](docs/images/13-wu-pin-ji-lu-guan-li.png)
 
 物品分类管理：对失物招领的物品分类进行增删改查管理
 
-![物品分类管理：对失物招领的物品分类进行增删改查管理](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-05-12/80b1e9eb-f10a-4d54-862c-da8c16c0cd3e.png)
+![物品分类管理：对失物招领的物品分类进行增删改查管理](docs/images/14-wu-pin-fen-lei-guan-li.png)
 
 
 ## 五、主要业务流程
